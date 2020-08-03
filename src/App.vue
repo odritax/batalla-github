@@ -5,9 +5,12 @@
     <div class="row">
       <div class="col-md-4"></div>
       <div class="col-sm-12 col-md-4">
-        <h2>Player 1</h2>
-              <h4>{{this.nombre_usuario}}</h4>
+        <h4>{{this.nombre_usuario}}</h4>
         <table class="table table-bordered">
+          <tr>
+            <td><input class="form-control" type="text" v-model="usuario"></td>
+            <td><button class="btn btn-primary" v-on:click="Enviar">Enviar</button></td>
+          </tr>
          <tbody class="text-left">
           <tr>
             <td>Public Repositories</td>
@@ -43,6 +46,7 @@
     name: 'App',
     data() {
       return {
+        usuario:'',
         nombre_usuario: '',
         followers: 0,
         following: 0,
@@ -52,9 +56,9 @@
         avatar_followers: []
       }
     },
-    mounted() {
-      // axios en forma de promesas (ES6)
-      this.axios.get('https://api.github.com/users/odritax')
+    methods: {
+     Enviar(){
+       this.axios.get(`https://api.github.com/users/${this.usuario}`)
       .then((datos) => {
         const data= datos.data;
         this.nombre_usuario=data.login
@@ -67,7 +71,7 @@
       .catch((error) => {
         alert(error);
       });
-     this.axios.get('https://api.github.com/users/odritax/followers')
+     this.axios.get(`https://api.github.com/users/${this.usuario}/followers`)
     .then((datos) => {
       console.log(datos)
       const data = datos.data;
@@ -76,7 +80,10 @@
     .catch((error) => {
       alert(error);
     });
-  }
+
+     }
+
+    }
     }
 </script>
 
