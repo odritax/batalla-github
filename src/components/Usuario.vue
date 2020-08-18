@@ -1,34 +1,34 @@
 <template>
   <div>
     <h4>{{this.nombre_usuario}}</h4>
-    <table class="table table-bordered">
-      <tr>
-        <td><input class="form-control" type="text" v-model="usuario"></td>
-        <td><button class="btn btn-primary" v-on:click="Enviar">Enviar</button></td>
-      </tr>
-      <tbody class="text-left">
-      <tr>
-        <td>Public Repositories</td>
-        <td>{{this.public_repos}}</td>
-      </tr>
-      <tr>
-        <td>Number of followers</td>
-        <td>{{this.followers}}</td>
-      </tr>
-      <tr>
-        <td>Number Following</td>
-        <td>{{this.following}}</td>
-      </tr>
-      <tr>
-        <td>Public Gists</td>
-        <td>{{this.public_gists}}</td>
-      </tr>
-      <tr>
-        <td class="score">Total Score</td>
-        <td class="score">{{this.contador}}</td>
-      </tr>
-      </tbody>
-    </table>
+    <b-table-simple class="table table-bordered">
+      <b-tr>
+        <b-td><b-input class="form-control" type="text" v-model="usuario"></b-input></b-td>
+        <b-td> <b-button variant="primary" v-on:click="Enviar">Enviar</b-button></b-td>
+      </b-tr>
+      <b-tbody class="text-left">
+      <b-tr>
+        <b-td>Public Repositories</b-td>
+        <b-td>{{this.public_repos}}</b-td>
+      </b-tr>
+      <b-tr>
+        <b-td>Number of followers</b-td>
+        <b-td>{{this.followers}}</b-td>
+      </b-tr>
+      <b-tr>
+        <b-td>Number Following</b-td>
+        <b-td>{{this.following}}</b-td>
+      </b-tr>
+      <b-tr>
+        <b-td>Public Gists</b-td>
+        <b-td>{{this.public_gists}}</b-td>
+      </b-tr>
+      <b-tr>
+        <b-td class="score">Total Score</b-td>
+        <b-td class="score">{{this.contador}}</b-td>
+      </b-tr>
+      </b-tbody>
+    </b-table-simple>
   </div>
 </template>
 <script>

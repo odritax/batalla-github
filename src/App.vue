@@ -2,32 +2,19 @@
   <div id="app">
     <img id="logo" src="@/assets/git.png" alt="">
     <h1>Welcome to GitHub Battle</h1>
-    <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-4">
+    <b-row>
+      <b-col col md="2"></b-col>
+      <b-col col md="4">
         <Usuario player="1"/>
-      </div>
-      <div class="col-md-4">
+      </b-col>
+      <b-col col md="4">
         <Usuario player="2"/>
-      </div>
-      <div class="col-md-2"></div>
-    </div>
-    <button v-on:click="Batalla" data-toggle="modal" data-target=".modal" class="btn btn-danger">Duelo a muerte con cuchillos!</button>
+      </b-col>
+      <b-col col md="2"></b-col>
+    </b-row>
+    <b-button variant="danger" v-on:click="Batalla"  v-b-modal="'my-modal'">Duelo a muerte con cuchillos!</b-button>
      <!-- modalcito -->
-     <div class="modal" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p>{{mensaje}}</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <b-modal id="my-modal" hide-footer><p class="text-center">{{mensaje}}</p></b-modal>
   </div>
 </template>
 <script>

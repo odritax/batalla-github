@@ -1,12 +1,17 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import BootstrapVue from "bootstrap-vue";
 import App from './App.vue'
 import axios from 'axios';
 import router from './router';  // añadimos esta línea
+// import css files
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-vue/dist/bootstrap-vue.css";
 
 Vue.config.productionTip = false
 
 Vue.use(Vuex);
+Vue.use(BootstrapVue);
 
 Vue.prototype.axios = axios; 
 const store = new Vuex.Store({
